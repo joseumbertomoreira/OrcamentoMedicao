@@ -1,0 +1,41 @@
+<div class="row center">
+	<div class="col-sm-10 offset-sm-1 text-center">
+		<form class="justify-content-center">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Nome da rua</label>
+				<input type="text" class="form-control" name="rua" ng-model="rua">				
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Nome da bairro</label>
+				<input type="text" class="form-control" name="district" ng-model="district">				
+			</div>
+			<button ng-click="submit(rua, district)" type="submit" class="btn btn-primary">Entrar</button>				
+		</form>	
+	</div>
+</div>
+<div class="row events">
+	<div ng-if="alert" class="alert alert-danger" role="alert">
+		ENDEREÇO OU BAIRRO INVÁLIDO
+	</div>	
+</div>
+<div ng-if="districtIf" ng-model="districtObj">
+	<div class="row"></div>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">CEP</th>
+		      <th scope="col">Complemento</th>
+		      <th scope="col">Bairro</th>
+		      <th scope="col">Logradouro</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>{{districtObj.cep}}</td>
+		      <td>{{districtObj.complemento}}</td>
+		      <td>{{districtObj.bairro}}</td>
+		      <td>{{districtObj.logradouro}}</td>
+		    </tr>
+		  </tbody>
+		</table>
+</div>
